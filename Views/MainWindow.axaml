@@ -3,15 +3,113 @@
         xmlns:vm="using:CoffeelockSharp.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
         x:Class="CoffeelockSharp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="CoffeelockSharp">
+        Title="Coffeelock Calculator"
+        SystemDecorations="Full"
+        SizeToContent="WidthAndHeight">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <DockPanel LastChildFill="False">
+        <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+            <TextBlock Text="{Binding LSorcererLevel}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+            <NumericUpDown Value="{Binding SorcererLevel}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+            <NumericUpDown Value="{Binding WarlockLevel}" Minimum="1" Maximum="18" Margin="10" DockPanel.Dock="Right" ShowButtonSpinner="False"/>
+            <TextBlock Text="{Binding LWarlockLevel}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right"/>
+        </DockPanel>
+
+        <Grid ColumnDefinitions="0.5*, 0.5*" RowDefinitions="Auto" DockPanel.Dock="Top">
+            <DockPanel LastChildFill="False" Grid.Row="0" Grid.Column="0">
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSorceryPoints}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding SorceryPoints}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LSpend}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleSpendPoint}"/>
+                </DockPanel>
+                <TextBlock Text="{Binding LSpellSlots}" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots1}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots1}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="1" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="1" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="1" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots2}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots2}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="2" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="2" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="2" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots3}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots3}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="3" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="3" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="3" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots4}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots4}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="4" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="4" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="4" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots5}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots5}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="5" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="5" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="5" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots6}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots6}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="6" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="6" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="6" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots7}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots7}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="7" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="7" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="7" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots8}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots8}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="8" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="8" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="8" />
+                </DockPanel>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LSlots9}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding Slots9}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LCreate}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCreateSpell}" CommandParameter="9" />
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroySpell}" CommandParameter="9" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastSpell}" CommandParameter="9" />
+                </DockPanel>
+            </DockPanel>
+            
+            <DockPanel LastChildFill="False" Grid.Row="0" Grid.Column="1">
+                <TextBlock Text="{Binding LPactSlots}" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <TextBlock Text="{Binding LPactLevel}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                    <NumericUpDown Value="{Binding PactSlots}" Minimum="2" Maximum="19" Margin="10" DockPanel.Dock="Left" ShowButtonSpinner="False"/>
+                    <Button Content="{Binding LDestroy}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleDestroyPact}" />
+                    <Button Content="{Binding LCast}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleCastPact}" />
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+        
+        <DockPanel LastChildFill="False" DockPanel.Dock="Bottom">
+            <Button Content="{Binding LShortRest}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleShortRest}" />
+            <Button Content="{Binding LLongRest}" Margin="10" DockPanel.Dock="Right" Command="{Binding HandleLongRest}" />
+        </DockPanel>
+    </DockPanel>
 
 </Window>

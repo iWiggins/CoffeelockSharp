@@ -1,4 +1,6 @@
 using Avalonia.Controls;
+using CoffeelockSharp.ViewModels;
+using CoffeelockSharp.Models;
 
 namespace CoffeelockSharp.Views
 {
@@ -8,5 +10,6 @@ namespace CoffeelockSharp.Views
         {
             InitializeComponent();
         }
+
     }
 }
